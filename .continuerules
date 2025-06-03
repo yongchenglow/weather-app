@@ -1,0 +1,39 @@
+1. Code Style (Prettier)
+
+- Always use semicolons.
+- Indentation must be 2 spaces.
+- Use trailing commas where valid (objects, arrays, etc.).
+- Wrap lines at 100 characters maximum.
+
+2. Linting (ESLint)
+
+- Follow Next.js and TypeScript ESLint rules.
+- Enforce Prettier formatting via ESLint.
+- No unused variables or imports. Use \_ prefix for intentionally unused ones.
+- Avoid any unless absolutely necessary.
+- Function return types can be inferred.
+- console statements should be used sparingly (warn only). No debugger.
+- Prefer const over let unless reassignment is necessary.
+- Always use strict equality (===) — never ==.
+- Follow accessibility rules in JSX (alt text for images, valid anchors).
+- No need to import React in .tsx files (react/react-in-jsx-scope is disabled).
+
+3. Component Design
+
+- All UI must be built using MUI (Material UI) components.
+- Use TypeScript (.tsx) for all components.
+- Ensure full type safety.
+- Prefer composition over inheritance.
+- Use consistent and grouped import ordering.
+
+4. TypeScript Configuration
+
+- Enforce strict type checks (strict, noUnusedLocals, noUnusedParameters).
+- Module resolution uses the following aliases:
+  @/_→ ./src/_
+  @app/_→ ./src/app/_
+  @components/_→ ./src/components/_
+  @lib/_→ ./src/lib/_
+- Use ES2022+ syntax.
+- Avoid emitting JavaScript (noEmit: true).
+- Use modern bundler-style module resolution.
