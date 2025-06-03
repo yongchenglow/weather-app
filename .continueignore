@@ -1,0 +1,7 @@
+yarn.lock
+.husky/*
+.nvmrc
+.prettierignore
+next.config.ts
+tsconfig.json
+public/*
