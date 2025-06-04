@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ThemeRegistry from "../components/ThemeRegistry";
+import ThemeProvider from "../components/providers/ThemeProvider";
 import { notoSans } from "@/lib/font";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSans.className}>
-        <ThemeRegistry>{children}</ThemeRegistry>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
