@@ -8,6 +8,7 @@ import useSystemTheme from "@/hooks/useSystemTheme";
 
 export default function ThemeRegistry({ children }: { children: ReactNode }) {
   const systemTheme = useSystemTheme();
+
   return (
     <AppRouterCacheProvider>
       <ThemeProvider theme={createAppTheme(systemTheme)}>

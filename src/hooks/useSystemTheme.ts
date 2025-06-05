@@ -1,31 +1,34 @@
 import { appTheme, AppTheme } from "@/constants/configs";
 import { useEffect, useState } from "react";
 
-const useSystemTheme = (): AppTheme => {
-  const [theme, setTheme] = useState<AppTheme>(() => {
-    if (typeof window !== "undefined" && window.matchMedia) {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? appTheme.DARK
-        : appTheme.LIGHT;
-    }
-    return appTheme.LIGHT;
-  });
+const useSystemTheme = (): AppTheme | undefined => {
+  const [theme, setTheme] = useState<AppTheme | undefined>(undefined);
 
   useEffect(() => {
-    if (!window.matchMedia) return;
+    if (!window.matchMedia) {
+      setTheme(appTheme.LIGHT);
+      return;
+    }
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    setTheme(mediaQuery.matches ? appTheme.DARK : appTheme.LIGHT);
 
     const handleChange = (event: MediaQueryListEvent) => {
-      setTheme(event.matches ? "dark" : "light");
+      setTheme(event.matches ? appTheme.DARK : appTheme.LIGHT);
     };
 
-    if (mediaQuery.addEventListener) mediaQuery.addEventListener("change", handleChange);
-    else mediaQuery.addListener(handleChange); // fallback for older browsers
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else {
+      mediaQuery.addListener(handleChange); // fallback for older browsers
+    }
 
     return () => {
-      if (mediaQuery.addEventListener) mediaQuery.addEventListener("change", handleChange);
-      else mediaQuery.addListener(handleChange); // fallback for older browsers
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
     };
   }, []);
 
