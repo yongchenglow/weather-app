@@ -59,6 +59,77 @@ const createAppTheme = (mode: AppTheme = appTheme.LIGHT) =>
           },
         },
       },
+      MuiFilledInput: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderRadius: theme.spacing(1),
+            [theme.breakpoints.up("md")]: {
+              borderRadius: theme.spacing(2.5),
+            },
+            backgroundColor: "rgba(26, 26, 26, 0.5)",
+
+            "&:before": {
+              borderBottom: "none !important",
+            },
+            "&:after": {
+              borderBottom: "none",
+            },
+
+            "&:hover": {
+              backgroundColor: "rgba(26, 26, 26, 0.8)",
+            },
+            "&.Mui-focused": {
+              backgroundColor: "rgba(26, 26, 26, 0.5)",
+            },
+          }),
+          input: ({ theme }) => ({
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3),
+            paddingTop: theme.spacing(3),
+            paddingBottom: theme.spacing(1.625),
+          }),
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            "&.MuiInputLabel-filled": {
+              color: "rgba(255, 255, 255, 0.4)",
+              left: theme.spacing(1.5),
+              top: theme.spacing(0.25),
+            },
+            "&.MuiInputLabel-filled.Mui-focused": {
+              fontSize: theme.typography.body2.fontSize,
+              color: "rgba(255, 255, 255, 0.4)",
+              top: theme.spacing(0),
+            },
+            "&.MuiInputLabel-filled.MuiFormLabel-filled": {
+              fontSize: theme.typography.body2.fontSize,
+              color: "rgba(255, 255, 255, 0.4)",
+              top: theme.spacing(0),
+            },
+          }),
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderRadius: theme.spacing(1),
+            padding: theme.spacing(1),
+            minWidth: theme.spacing(7.5),
+            [theme.breakpoints.up("md")]: {
+              borderRadius: theme.spacing(2.5),
+            },
+          }),
+        },
+      },
+      MuiSvgIcon: {
+        styleOverrides: {
+          fontSizeLarge: {
+            fontSize: 34,
+          },
+        },
+      },
     },
   });
 
