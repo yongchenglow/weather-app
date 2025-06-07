@@ -6,7 +6,7 @@ const SearchInput: React.FC = () => {
     <Box display="flex" gap={{ xs: 1.25, md: 2.5 }}>
       <TextField label="Country or City" variant="filled" type="text" fullWidth />
       <Button variant="contained">
-        <SearchIcon fontSize="large" />
+        <SearchIcon />
       </Button>
     </Box>
   );
