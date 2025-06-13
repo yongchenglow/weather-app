@@ -29,11 +29,14 @@
 4. TypeScript Configuration
 
 - Enforce strict type checks (strict, noUnusedLocals, noUnusedParameters).
-- Module resolution uses the following aliases:
+- Use ES2022+ syntax.
+- Avoid emitting JavaScript (noEmit: true).
+- Use modern bundler-style module resolution.
+
+5. File paths
+
+- Module resolution uses the following aliases when trying to resolve a file path:
   @/_→ ./src/_
   @app/_→ ./src/app/_
   @components/_→ ./src/components/_
   @lib/_→ ./src/lib/_
-- Use ES2022+ syntax.
-- Avoid emitting JavaScript (noEmit: true).
-- Use modern bundler-style module resolution.
