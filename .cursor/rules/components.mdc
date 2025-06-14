@@ -1,0 +1,30 @@
+---
+description: When it involves generating code for frontend components
+globs:
+alwaysApply: false
+---
+# Component Standards
+
+## Framework
+- Use Material UI (MUI) for all UI components
+- Use TypeScript (.tsx) for all component files
+
+## Naming
+- Use PascalCase for component names
+- Add 'Component' suffix to component files
+- Example: `WeatherCardComponent.tsx`
+
+## Structure
+- Ensure full type safety
+- Prefer composition over inheritance
+- Follow accessibility rules:
+  - Include alt text for images
+  - Use valid anchor tags
+  - Follow ARIA best practices
+
+## Code Quality
+- No console statements (warn only)
+- No debugger statements
+- Prefer const over let
+- Use strict equality (===)
+- No unused variables (prefix with _ if intentionally unused)

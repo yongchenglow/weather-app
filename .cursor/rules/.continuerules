@@ -40,3 +40,23 @@
   @app/_→ ./src/app/_
   @components/_→ ./src/components/_
   @lib/_→ ./src/lib/_
+
+6. When installing things the project is using yarn instead of npm
+
+7. Commit Message Conventions
+
+- Follow Conventional Commits specification.
+- Format: <type>(<scope>): <description>
+- Types:
+  - feat: New feature
+  - fix: Bug fix
+  - docs: Documentation changes
+  - style: Code style changes (formatting, etc.)
+  - refactor: Code changes that neither fix bugs nor add features
+  - perf: Performance improvements
+  - test: Adding or modifying tests
+  - chore: Changes to build process or auxiliary tools
+- Scope is optional but recommended
+- Description should be in present tense and concise
+- Use body for detailed explanation if needed
+- Use footer for breaking changes or issue references

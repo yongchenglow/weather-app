@@ -1,0 +1,38 @@
+---
+description: When it involves code generation in typescript
+globs:
+alwaysApply: false
+---
+# Code Style Rules
+
+## Formatting
+- Use 2 spaces for indentation
+- Maximum line length of 100 characters
+- Always use semicolons
+- Use trailing commas in objects and arrays
+- Follow Prettier configuration
+
+## TypeScript
+- Enable strict mode
+- No unused locals or parameters
+- Target ES2022
+- Use bundler module resolution
+- Avoid using `any` type
+- Function return types can be inferred
+
+## Imports
+- Follow this import order:
+  1. React
+  2. Next.js
+  3. MUI
+  4. Components (@components)
+  5. Libraries (@lib)
+  6. App (@app)
+  7. Relative imports
+
+## Path Aliases
+- Use these path aliases:
+  - @/ → ./src/
+  - @app/ → ./src/app/
+  - @components/ → ./src/components/
+  - @lib/ → ./src/lib/
